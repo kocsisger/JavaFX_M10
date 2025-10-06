@@ -26,7 +26,10 @@ public class MainController {
 
     @FXML
     void loadData() {
-        nameLabel.setText(model.getStudent().getName());
+        //nameLabel.setText(model.getStudent().getName());
+
+        nameLabel.textProperty().bind(model.getStudent().nameProperty());
+
         creditsLabel.setText("" + model.getStudent().getCredits());
         dateOfBirthLabel.setText(model.getStudent().getDateOfBirth().toString());
         //play firework animation
@@ -34,7 +37,7 @@ public class MainController {
 
     @FXML
     void changeData() {
-        model.getStudent().setName("Tom Smith");
+        //model.getStudent().setName("Tom Smith");
         nameLabel.setText(model.getStudent().getName());
     }
 
